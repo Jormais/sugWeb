@@ -1,0 +1,36 @@
+.banner{
+    display: grid;
+    background-color:steelblue;
+    grid-template-columns: 20% 80%;
+    margin: 0;
+    &__logo{
+        align-self: center;
+        justify-self: center;
+    }
+    &__center{
+        padding: 20px 20px 20px 150px;
+        .banner__text{
+            font-weight: 700;
+            color: yellow;
+        }
+        .banner__img{
+            padding-left: 92px;
+        }
+    }
+}
+
+.nav{
+    text-align: center;
+    background-color:yellow;
+    padding: 10px;
+    margin: 0;
+    &__item{
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+    }
+    &__item:hover{
+        color: grey;
+        border-bottom:solid 1px grey;
+    }
+}
