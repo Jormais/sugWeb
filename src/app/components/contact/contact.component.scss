@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    background-color: whitesmoke;
+    width: 90%;
+    height: 400px;
+    padding: 20px;
+    &__input{
+        align-self: center;
+        justify-self: center;
+        width: 600px;
+    }
+    &__button{
+        align-self: center;
+        justify-self: center;
+    }
+}
