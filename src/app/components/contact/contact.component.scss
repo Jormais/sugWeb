@@ -4,6 +4,8 @@
     width: 90%;
     height: 400px;
     padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     &__input{
         align-self: center;
         justify-self: center;
@@ -13,4 +15,18 @@
         align-self: center;
         justify-self: center;
     }
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+}
+
+p{
+    text-align: center;
+}
+
+p a{
+    text-decoration: none;
+    color: black;
 }
