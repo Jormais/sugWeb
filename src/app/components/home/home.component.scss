@@ -1,6 +1,18 @@
 .container{
-    background-color: whitesmoke;
+    display: grid;
+    background-color:rgb(218, 214, 20);
     text-align: center;
     width: 90%;
     padding: 20px;
+    grid-template-columns: 20% 80%;
+    &--main{
+        background-color: whitesmoke;
+        margin: 5px;
+        padding: 10px;
+    }
+    &--aside{
+        background-color: whitesmoke;
+        margin: 5px;
+        padding: 5px;
+    }
 }
