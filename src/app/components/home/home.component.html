@@ -1,17 +1,37 @@
 <app-navbar></app-navbar>
 <div class="container">
     <div class="container--aside">
-        <div class="box">
+        <div class="box-aside">
             <h1>COVID</h1>
             <p>Mantente informado en la página oficial</p>
             <a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019" target="_blank">pincha aquí</a>
         </div>
     </div>
     <div class="container--main">
-        <h1>El Sindicato Unificado de Guaguas colabora con la campaña "Por un cacho de turron" y el Banco de Alimentos para ayudar a los mas desfavorecidos.</h1>
-        <img src="https://static.wixstatic.com/media/b9275d_2ffa7cfd2193467292089d2983924181~mv2.jpg" alt=""> <br>
-        <img src="https://static.wixstatic.com/media/b9275d_5c44f70fe81d4b0395a17aef31013807~mv2.jpg" alt="">
-        <img src="https://static.wixstatic.com/media/b9275d_0735ffd595e943a2bb76c834cc8ed9ee~mv2.jpg" alt="">
+        <div class="box-main">
+            <h1>El Sindicato Unificado de Guaguas colabora con la campaña "Por un cacho de turron" y el Banco de Alimentos para ayudar a los mas desfavorecidos.</h1>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <img src="https://static.wixstatic.com/media/b9275d_2ffa7cfd2193467292089d2983924181~mv2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://static.wixstatic.com/media/b9275d_5c44f70fe81d4b0395a17aef31013807~mv2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://static.wixstatic.com/media/b9275d_0735ffd595e943a2bb76c834cc8ed9ee~mv2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>

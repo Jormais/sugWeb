@@ -6,21 +6,19 @@
     padding: 20px;
     grid-template-columns: 20% 80%;
     &--main{
-        background-color: whitesmoke;
         margin: 5px;
-        padding: 10px;
     }
     &--aside{
         margin: 5px;
     }
 }
 
-img{
-    max-width: 50%;
-    max-height: 50%;
-}
-
-.box{
+.box-aside{
     background-color: whitesmoke;
     padding: 5px;
+}
+
+.box-main{
+    background-color: whitesmoke;
+    padding: 10px;
 }
