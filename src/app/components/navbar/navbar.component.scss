@@ -13,13 +13,13 @@
     &__center{
         align-self: center;
         padding: 20px 20px 20px 80px;
-        .banner__text{
-            font-weight: 700;
-            color: black;
-        }
         // .banner__img{
         //     padding-left: 92px;
         // }
+        &__text{
+            color:black;
+            font-weight: 700;
+        }
     }
 }
 
