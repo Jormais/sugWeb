@@ -27,7 +27,7 @@
     background-color:yellow;
     padding: 10px;
     &__item{
-        padding: 10px 20px 12px 20px;
+        padding: 10px 20px 11px 20px;
         text-decoration: none;
         color: black;
         font-weight: 500;
@@ -39,6 +39,26 @@
     }
     &__time{
         padding-right: 10px;
-        margin-bottom: 0;
+        text-decoration: none;
+        color: black;
+    }
+    &__login{
+        padding:  11px;
+        padding-right: 10px;
+        text-decoration: none;
+        color: black;
+    }
+    &__login__img{
+        opacity: 0;
+    }
+    
+    &__login:hover{
+        color: rgb(4, 75, 133);
+        border-bottom:solid 1px steelblue;
+        font-weight: 700;
+        .navbar__login__img{
+            transition: 0.5s;
+            opacity: 1;
+        }
     }
 }

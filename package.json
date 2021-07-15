@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prebuild": "ng build && netlify deploy",
+    "build": "ng build && netlify deploy",
     "prod" : "netlify deploy --prod",
     "test": "ng test",
     "lint": "ng lint",
