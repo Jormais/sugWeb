@@ -30,9 +30,7 @@
 
 .box-aside:hover{
     background-color: darkgray;
-    transition-property: all;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in;
+    transition: all 0.3s ease-out;
 }
 
 .box-main{
