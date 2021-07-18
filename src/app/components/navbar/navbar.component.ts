@@ -7,9 +7,9 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  result : string = new Date().toLocaleString();;
+  result : string = new Date().toLocaleString();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     setInterval(() => {
