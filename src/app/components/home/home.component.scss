@@ -8,29 +8,31 @@
 }
 
 .box-aside{
-    background-color:rgb(93, 93, 240);
+    background-color:darkgray;
     border: blanchedalmond solid 1px;
     border-radius: 5px;
-    color: rgb(231, 220, 220);
-    padding: 5px;
+    color: rgb(155, 52, 12);
+    padding: 15px;
     margin: 5px;
-}
-
-.box-aside a{
-    text-decoration: none;
-    color:black;
-    font-weight: 600;
+    p{
+        color: blanchedalmond;
+    }
+    label{
+        color: blanchedalmond;
+    }
+    a{
+        text-decoration: none;
+        color:rgb(18, 18, 126);
+        font-weight: 600;
+        padding:10px;
+    }
 }
 
 .box-main{
-    background-color:darkblue;
+    background-color:black;
     border: blanchedalmond solid 1px;
     border-radius: 5px;
-    color: darkorange;
+    color: rgb(223, 134, 25);
     padding: 10px;
     margin: 5px;
 }
-
-// h1{
-//     color: darkorange;
-// }
