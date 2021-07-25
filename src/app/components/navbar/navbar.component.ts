@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   resultado = "";
 
   constructor() {
-    this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año}, hora: ${this.horas} : ${this.minutos} : ${this.segundos}`;
+    this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
   }
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
       this.horas = this.fecha.getHours();
       this.minutos = this.fecha.getMinutes();
       this.segundos = this.fecha.getSeconds();
-      this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año}, hora: ${this.horas} : ${this.minutos} : ${this.segundos}`;
+      this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
     }, 1000)
   } 
 
