@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-afiliate',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfiliateComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    this.getAll();
+  }
 
   ngOnInit(): void {
+  }
+
+  getAll() {
+    axios.get("http://localhost:3000/users")
+    .then( users => {
+      console.log(users.data);
+    })
   }
 
 }
