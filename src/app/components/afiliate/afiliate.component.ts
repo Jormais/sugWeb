@@ -13,12 +13,26 @@ export class AfiliateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.deleteUser();
   }
 
   getAll() {
-    axios.get("http://localhost:3000/users")
+    return axios.get("http://localhost:3000/users")
     .then( users => {
       console.log(users.data);
+    });
+  }
+
+  postUser() {
+    return axios.post("http://localhost:3000/users", "'Nilsa','Brito Santana','1518','Otros','NilsaBrito@gmail.com','987654321','1','1','4'")
+    .then(res => {
+      return "Ok";
+    });
+  }
+
+  deleteUser(){// revisar, esta mal
+    return axios.delete("http://localhost:3000/users").then(res => {
+      return "OK";
     })
   }
 
