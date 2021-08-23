@@ -15,19 +15,23 @@ export class RegisterComponent implements OnInit {
   }
 
   user : User = {
-    name : "Katiflow",
-    subname : "Del monte",
-    employee_number : "1234",
-    job_category : "Conductora",
-    email : "Kati@delmonte.com",
-    password : "123456789",
-    terms_conditions : 0,
-    rol : 0
+    name : "",
+    subname : "",
+    employee_number : "",
+    job_category : "",
+    email : "",
+    password : "",
+    terms_conditions : true,
+    rol : false
   }
 
   postUser() {
     this.userService.postUser(this.user)
     .then(user => console.log(user));
+  }
+
+  register(){
+    console.log(this.user);
   }
 
 }

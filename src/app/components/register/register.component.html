@@ -1,43 +1,42 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <form>
-        <div class="mb-3 container__input">
-            <label for="exampleInputEmail1" class="form-label">Nombre</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <div class="mb-3 container__input">
-            <label for="exampleInputEmail1" class="form-label">Apellidos</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <div class="mb-3 container__input">
-            <label for="exampleInputEmail1" class="form-label">Número de empleado</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <div class="mb-3 container__input">
-            <label for="exampleInputEmail1" class="form-label">Categoría</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <div class="mb-3 container__input">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <div class="mb-3 container__input">
-            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Acepto los términos y condiciones</label>
-            <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
-        </div>
-        <button type="submit" class="btn btn-outline-success container__button">Registrarse</button>
-    </form>
+    <h1>Registro</h1>
+    <div class="mb-3 container__input">
+        <label for="inputName" class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="user.name" name="name" id="inputName">
+        <div id="inputNameHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <div class="mb-3 container__input">
+        <label for="inputSubname" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" [(ngModel)]="user.subname" name="subname" id="inputSubname">
+        <div id="inputSubnameHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <div class="mb-3 container__input">
+        <label for="inputEmployee_number" class="form-label">Número de empleado</label>
+        <input type="text" class="form-control" [(ngModel)]="user.employee_number" name="employee_number" id="inputEmployee_number">
+        <div id="inputEmployee_numberHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <div class="mb-3 container__input">
+        <label for="inputCategory" class="form-label">Categoría</label>
+        <input type="text" class="form-control" [(ngModel)]="user.job_category" name="job_category" id="inputCategory">
+        <div id="inputCategoryHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <div class="mb-3 container__input">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="user.email" name="email" id="inputEmail">
+        <div id="emailHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <div class="mb-3 container__input">
+        <label for="inputPassword" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password" name="password" id="inputPassword">
+        <div id="inputPasswordHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <div class="mb-3 form-check container__input">
+        <input type="checkbox" [(ngModel)]="user.terms_conditions" name="terms_conditions" class="form-check-input" id="check">
+        <label class="form-check-label" for="exampleCheck1">Acepto los términos y condiciones</label>
+        <div id="checkHelp" class="form-text">* Obligatorio para registrarse</div>
+    </div>
+    <button type="submit" (click)="register()" class="btn btn-outline-success container__button">Registrarse</button>
 </div>
 <div>
     <p>Para iniciar sesion pulse <a routerLink="/login">aquí</a></p>
