@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
+import { EmpleadosService } from 'src/app/services/empleados.service';
+import { User } from 'src/app/utils/models.utils';
 
 @Component({
   selector: 'app-afiliate',
@@ -8,32 +9,37 @@ import axios from 'axios';
 })
 export class AfiliateComponent implements OnInit {
 
-  constructor() {
-    this.getAll();
+  constructor(private userService : EmpleadosService) {
+    //this.postUser();
+    this.deleteUser();
+    
+  }
+
+  user : User = {
+    name : "Katiflow",
+    subname : "Del monte",
+    employee_number : "1234",
+    job_category : "Conductora",
+    email : "Kati@delmonte.com",
+    password : "123456789",
+    terms_conditions : 0,
+    rol : 0
   }
 
   ngOnInit(): void {
-    this.deleteUser();
   }
 
   getAll() {
-    return axios.get("http://localhost:3000/users")
-    .then( users => {
-      console.log(users.data);
-    });
   }
 
   postUser() {
-    return axios.post("http://localhost:3000/users", "'Nilsa','Brito Santana','1518','Otros','NilsaBrito@gmail.com','987654321','1','1','4'")
-    .then(res => {
-      return "Ok";
-    });
+    this.userService.postUser(this.user)
+    .then(user => console.log(user));
   }
 
-  deleteUser(){// revisar, esta mal
-    return axios.delete("http://localhost:3000/users").then(res => {
-      return "OK";
-    })
-  }
+  deleteUser() {
+    this.userService.deleteUser('1234')
+    .then(user => console.log(user));
+}
 
 }

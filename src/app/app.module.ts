@@ -10,8 +10,8 @@ import { GaleryComponent } from './components/galery/galery.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LogOnComponent } from './log-on/log-on.component';
-import { LogInComponent } from './log-in/log-in.component';
+import { LogOnComponent } from './components/log-on/log-on.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
   declarations: [
