@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-afiliate',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AfiliateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService : UsersService) {
+  }
 
   ngOnInit(): void {
   }
+
+  getAll() {
+  }
+
+  deleteUser() {
+    this.userService.deleteUser('1234')
+    .then(user => console.log(user));
+}
 
 }
