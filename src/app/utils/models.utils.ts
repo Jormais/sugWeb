@@ -5,6 +5,6 @@ export interface User {
     job_category : string,
     email : string,
     password : string,
-    terms_conditions : number,
-    rol : number
+    terms_conditions : boolean,
+    rol : boolean
 }
