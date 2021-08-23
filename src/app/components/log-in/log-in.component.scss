@@ -2,10 +2,24 @@
     display: grid;
     background-color: whitesmoke;
     width: 90%;
-    height: 400px;
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    
+    &__input{
+        align-self: center;
+        justify-self: center;
+        width: 600px;
+    }
+    &__button{
+        align-self: center;
+        justify-self: center;
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
 }
