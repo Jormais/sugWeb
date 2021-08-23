@@ -10,8 +10,8 @@ import { GaleryComponent } from './components/galery/galery.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LogOnComponent } from './components/log-on/log-on.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
     ContactComponent,
     NavbarComponent,
     FooterComponent,
-    LogOnComponent,
-    LogInComponent
+    LogInComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

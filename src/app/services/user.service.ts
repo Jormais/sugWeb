@@ -6,7 +6,7 @@ import { User } from '../utils/models.utils';
 @Injectable({
   providedIn: 'root'
 })
-export class EmpleadosService {
+export class UsersService {
 
   constructor() {
   }

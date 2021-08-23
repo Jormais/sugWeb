@@ -5,6 +5,8 @@ import { AfiliateComponent } from './components/afiliate/afiliate.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { GaleryComponent } from './components/galery/galery.component';
 import { HomeComponent } from './components/home/home.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path : "contact",
     component : ContactComponent
+  },
+  {
+    path : "register",
+    component : RegisterComponent
+  },
+  {
+    path : "login",
+    component : LogInComponent
   }
 ];
 
