@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/user.service';
 import { User } from 'src/app/utils/models.utils';
 
@@ -9,7 +10,7 @@ import { User } from 'src/app/utils/models.utils';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private userService : UsersService) { }
+  constructor(private userService : UsersService,  private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -31,7 +32,16 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    console.log(this.user);
+    this.postUser();
+    window.sessionStorage.setItem("loginEmail", this.user.email);
+    window.sessionStorage.setItem("loginPassword", this.user.password);
+    this.router.navigateByUrl("/login").then(e => {
+      if (e) {
+        console.log("Navigation is successful!");
+      } else {
+        console.log("Navigation has failed!");
+      }
+    });
   }
 
 }
