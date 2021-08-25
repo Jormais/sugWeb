@@ -17,9 +17,13 @@ export class NavbarComponent implements OnInit {
   minutos : number = this.fecha.getMinutes();
   segundos : number = this.fecha.getSeconds();
   resultado = "";
+  hidden = true;
 
   constructor() {
     this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
+    if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
+      this.hidden = false;
+    }
   }
 
   ngOnInit(): void {
