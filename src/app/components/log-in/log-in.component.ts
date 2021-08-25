@@ -22,7 +22,14 @@ export class LogInComponent implements OnInit {
     rol : false
   };
 
-  constructor(private userService : UsersService) { }
+  constructor(private userService : UsersService) { 
+    if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
+      console.log("YA ESTA LOGEADO");
+    }
+    console.log(window.sessionStorage.getItem("loginEmail"));
+    console.log(window.sessionStorage.getItem("loginPassword"));
+    
+  }
 
   ngOnInit(): void {
   }
@@ -46,6 +53,8 @@ export class LogInComponent implements OnInit {
       console.log(this.user);
       if (this.email === this.user.email && this.password === this.user.password) {
         console.log("El login es correcto");
+        window.sessionStorage.setItem("loginEmail", this.user.email);
+        window.sessionStorage.setItem("loginPassword", this.user.password);
         this.user = {
           name : "",
           subname : "",
@@ -60,6 +69,7 @@ export class LogInComponent implements OnInit {
         //al estar logueado cambiar la interfaz para los usuarios, tanto la navbar como las paginas 
         //(igual es una buena idea ocultar las paginas a los usuarios que no estan logueados)
         //al admin cargarle una pestaña adicional para administrar los usuarios registrados
+        
       } else {
         console.log("el login no es correcto");
       }
@@ -69,6 +79,8 @@ export class LogInComponent implements OnInit {
       console.log(this.user);
       if (this.user.email === this.email && this.user.password === this.password) {
         console.log("El login es correcto");
+        window.sessionStorage.setItem("loginEmail", this.user.email);
+        window.sessionStorage.setItem("loginPassword", this.user.password);
         this.user = {
           name : "",
           subname : "",
