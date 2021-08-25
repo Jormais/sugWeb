@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { UsersService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,10 +20,11 @@ export class NavbarComponent implements OnInit {
   resultado = "";
   hidden = true;
 
-  constructor() {
+  constructor(private userService : UsersService) {
     this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       this.hidden = false;
+
     }
   }
 
@@ -38,7 +40,15 @@ export class NavbarComponent implements OnInit {
       this.segundos = this.fecha.getSeconds();
       this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
     }, 1000)
+    if (this.userService.isLogged == true) {
+      document.getElementsByClassName("navbar__login")[0].textContent = "Salir"
+    }
   } 
 
+  logOut() {
+    sessionStorage.clear()
+    this.userService.isLogged = false
+    location.reload();
+  }
 
 }
