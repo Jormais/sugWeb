@@ -25,9 +25,12 @@ export class LogInComponent implements OnInit {
   constructor(private userService : UsersService) { 
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
+      this.userService.isLogged = true;
+
     }
     console.log(window.sessionStorage.getItem("loginEmail"));
     console.log(window.sessionStorage.getItem("loginPassword"));
+    console.log(this.userService.isLogged);
     
   }
 
@@ -55,6 +58,7 @@ export class LogInComponent implements OnInit {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);
         window.sessionStorage.setItem("loginPassword", this.user.password);
+        location.reload();
         this.user = {
           name : "",
           subname : "",
@@ -69,6 +73,8 @@ export class LogInComponent implements OnInit {
         //al estar logueado cambiar la interfaz para los usuarios, tanto la navbar como las paginas 
         //(igual es una buena idea ocultar las paginas a los usuarios que no estan logueados)
         //al admin cargarle una pestaña adicional para administrar los usuarios registrados
+        //Para la seccion de galeria lo ideal seria crear dos componenetes uno para todos los usuarios
+        //y otro para que los usuarios que se hallan logueado puedan ver
         
       } else {
         console.log("el login no es correcto");
@@ -81,6 +87,7 @@ export class LogInComponent implements OnInit {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);
         window.sessionStorage.setItem("loginPassword", this.user.password);
+        this.userService.isLogged = true;
         this.user = {
           name : "",
           subname : "",
