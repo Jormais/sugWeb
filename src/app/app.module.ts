@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { PrivateGaleryComponent } from './components/private-galery/private-galery.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     LogInComponent,
-    RegisterComponent
+    RegisterComponent,
+    PrivateGaleryComponent
   ],
   imports: [
     BrowserModule,
