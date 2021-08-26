@@ -46,9 +46,11 @@ export class NavbarComponent implements OnInit {
   } 
 
   logOut() {
-    sessionStorage.clear()
-    this.userService.isLogged = false
-    location.reload();
+    if(document.getElementsByClassName("navbar__login")[0].textContent === "Salir"){
+      sessionStorage.clear();
+      this.userService.isLogged = false;
+      //location.reload();
+    }
   }
 
 }
