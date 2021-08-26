@@ -26,7 +26,6 @@ export class LogInComponent implements OnInit {
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
       this.userService.isLogged = true;
-
     }
     console.log(window.sessionStorage.getItem("loginEmail"));
     console.log(window.sessionStorage.getItem("loginPassword"));
@@ -41,7 +40,6 @@ export class LogInComponent implements OnInit {
     if (this.user.email === "") {
       console.log("carga la db");
       
-      console.log(`email : ${this.email} \n password : ${this.password}`);
       const res = await this.userService.getOneUser(this.email);
 
       this.user.email = res[0].email;
@@ -58,6 +56,7 @@ export class LogInComponent implements OnInit {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);
         window.sessionStorage.setItem("loginPassword", this.user.password);
+        this.userService.isLogged = true;
         location.reload();
         this.user = {
           name : "",
@@ -81,13 +80,13 @@ export class LogInComponent implements OnInit {
       }
     } else {
       console.log("no carga la db");
-      console.log(`email : ${this.email} \n password : ${this.password}`);
       console.log(this.user);
       if (this.user.email === this.email && this.user.password === this.password) {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);
         window.sessionStorage.setItem("loginPassword", this.user.password);
         this.userService.isLogged = true;
+        location.reload();
         this.user = {
           name : "",
           subname : "",
