@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-galery',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaleryComponent implements OnInit {
 
-  constructor() { }
+  isLoged : boolean = false;
+
+  constructor(private userService : UsersService) { }
 
   ngOnInit(): void {
+    this.isLoged = this.userService.isLogged;
   }
 
 }
