@@ -1,5 +1,7 @@
 <app-navbar></app-navbar>
-<app-private-galery></app-private-galery>
+<div *ngIf="isLoged == true">
+  <app-private-galery></app-private-galery>
+</div>
 <div class="container">
     <div class="container--main">
         <div class="box-main">
