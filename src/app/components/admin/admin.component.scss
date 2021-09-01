@@ -1,5 +1,19 @@
 .container{
-    display: flex;
+    
     background-color: blanchedalmond;
+    &__element{
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr 1fr;
+        text-align: center;
+    }
+}
 
+.buttons{
+    align-self: center;
+    justify-self: center;
+}
+
+p{
+    align-self: center;
+    justify-self: center;
 }
