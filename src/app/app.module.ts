@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { PrivateGaleryComponent } from './components/private-galery/private-galery.component';
 import { DescuentosComponent } from './components/descuentos/descuentos.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DescuentosComponent } from './components/descuentos/descuentos.componen
     LogInComponent,
     RegisterComponent,
     PrivateGaleryComponent,
-    DescuentosComponent
+    DescuentosComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
