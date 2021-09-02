@@ -16,7 +16,7 @@ export class UsersService {
   getAllUsers() {
     return axios.get("http://localhost:3000/users")
     .then( users => {
-      console.log(users.data);
+      return users.data;
     });
   }
 

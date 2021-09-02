@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/user.service';
+import { User } from 'src/app/utils/models.utils';
 
 @Component({
   selector: 'app-admin',
@@ -7,10 +8,24 @@ import { UsersService } from 'src/app/services/user.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  users = [1,2,3,5];
+  users : User[] = [{
+    name : "",
+    subname : "",
+    employee_number : "",
+    job_category : "",
+    email : "",
+    password : "",
+    terms_conditions : true,
+    rol : false
+  }];
 
   constructor(private userService : UsersService) {
-    userService.getAllUsers().then( users => console.log(users));
+    userService.getAllUsers().then( users => {
+      this.users = users
+      console.log(this.users[0].name);
+      console.log(users[0].nombre);
+      
+    });
   }
 
   ngOnInit(): void {

@@ -7,9 +7,9 @@
         <h5>Acciones</h5>
     </div>
     <div *ngFor="let user of users" class="container__element">
-        <p>Jonay</p>
-        <p>Brito Hernández</p>
-        <p>1515</p>
+        <p>{{user.name}}</p>
+        <p>{{user.subname}}</p>
+        <p>{{user.employee_number}}</p>
         <div class="buttons">
             <button>
                 aceptar
