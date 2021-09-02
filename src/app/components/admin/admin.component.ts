@@ -7,7 +7,7 @@ import { UsersService } from 'src/app/services/user.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  users : [] = [];
+  users = [1,2,3,5];
 
   constructor(private userService : UsersService) {
     userService.getAllUsers().then( users => console.log(users));
