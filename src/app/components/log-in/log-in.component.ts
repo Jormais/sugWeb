@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/user.service';
 import { User } from 'src/app/utils/models.utils';
 
@@ -22,7 +23,7 @@ export class LogInComponent implements OnInit {
     rol : false
   };
 
-  constructor(private userService : UsersService) { 
+  constructor(private userService : UsersService,private router : Router) { 
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
       this.userService.isLogged = true;
@@ -37,56 +38,73 @@ export class LogInComponent implements OnInit {
   }
 
   async login() {
-    if (this.user.email === "") {
+    if (this.user.email === "" ) {
       console.log("carga la db");
       
       const res = await this.userService.getOneUser(this.email);
-
       this.user = res[0];
-      
-      console.log(this.user);
-      if (this.email === this.user.email && this.password === this.user.password) {
-        console.log("El login es correcto");
-        window.sessionStorage.setItem("loginEmail", this.user.email);
-        window.sessionStorage.setItem("loginPassword", this.user.password);
-        this.userService.isLogged = true;
-        location.reload();
-        this.user = {
-          name : "",
-          subname : "",
-          employee_number : "",
-          job_category : "",
-          email : "",
-          password : "",
-          terms_conditions : true,
-          rol : false
-        };
-        
-      } else {
-        console.log("el login no es correcto");
+      console.log(res[0]);
+
+      if(res[0] === undefined) {
+        alert("la informacion introducida no es correcta, por favor revisela");
+      } else{
+        console.log(this.user);
+        if (this.email === this.user.email && this.password === this.user.password) {
+          console.log("El login es correcto");
+          window.sessionStorage.setItem("loginEmail", this.user.email);
+          window.sessionStorage.setItem("loginPassword", this.user.password);
+          this.userService.isLogged = true;
+          this.user = {
+            name : "",
+            subname : "",
+            employee_number : "",
+            job_category : "",
+            email : "",
+            password : "",
+            terms_conditions : true,
+            rol : false
+          };
+          this.router.navigateByUrl("/").then(e => {
+            if (e) {
+              console.log("Navigation is successful!");
+            } else {
+              console.log("Navigation has failed!");
+            }
+          });
+        } else {
+          alert("la informacion introducida no es correcta, por favor revisela");
+          location.reload();
+        }
       }
-    } else {
-      console.log("no carga la db");
-      console.log(this.user);
-      if (this.user.email === this.email && this.user.password === this.password) {
-        console.log("El login es correcto");
-        window.sessionStorage.setItem("loginEmail", this.user.email);
-        window.sessionStorage.setItem("loginPassword", this.user.password);
-        this.userService.isLogged = true;
-        location.reload();
-        this.user = {
-          name : "",
-          subname : "",
-          employee_number : "",
-          job_category : "",
-          email : "",
-          password : "",
-          terms_conditions : true,
-          rol : false
-        };
-      } else {
-        console.log("el login no es correcto");
-      }
+    // } else {
+    //   console.log("no carga la db");
+    //   console.log(this.user);
+    //   if (this.user.email === this.email && this.user.password === this.password) {
+    //     console.log("El login es correcto");
+    //     window.sessionStorage.setItem("loginEmail", this.user.email);
+    //     window.sessionStorage.setItem("loginPassword", this.user.password);
+    //     this.userService.isLogged = true;
+    //     this.user = {
+    //       name : "",
+    //       subname : "",
+    //       employee_number : "",
+    //       job_category : "",
+    //       email : "",
+    //       password : "",
+    //       terms_conditions : true,
+    //       rol : false
+    //     };
+    //     this.router.navigateByUrl("/").then(e => {
+    //       if (e) {
+    //         console.log("Navigation is successful!");
+    //       } else {
+    //         console.log("Navigation has failed!");
+    //       }
+    //     });
+    //   } else {
+    //     alert("la informacion introducida no es correcta, por favor revisela");
+    //     location.reload();
+    //   }
     }
   }
 
