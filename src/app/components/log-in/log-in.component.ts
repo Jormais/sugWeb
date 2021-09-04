@@ -42,14 +42,7 @@ export class LogInComponent implements OnInit {
       
       const res = await this.userService.getOneUser(this.email);
 
-      this.user.email = res[0].email;
-      this.user.employee_number = res[0].numero_empleado;
-      this.user.job_category = res[0].zona_de_trabajo;
-      this.user.name = res[0].nombre;
-      this.user.password = res[0].constraseña;
-      this.user.rol = res[0].rol_admin;
-      this.user.subname = res[0].apellido;
-      this.user.terms_conditions = res[0].terminos_y_condiciones;
+      this.user = res[0];
       
       console.log(this.user);
       if (this.email === this.user.email && this.password === this.user.password) {
@@ -68,12 +61,6 @@ export class LogInComponent implements OnInit {
           terms_conditions : true,
           rol : false
         };
-        //almacenar en una coockie si se esta logueado
-        //al estar logueado cambiar la interfaz para los usuarios, tanto la navbar como las paginas 
-        //(igual es una buena idea ocultar las paginas a los usuarios que no estan logueados)
-        //al admin cargarle una pestaña adicional para administrar los usuarios registrados
-        //Para la seccion de galeria lo ideal seria crear dos componenetes uno para todos los usuarios
-        //y otro para que los usuarios que se hallan logueado puedan ver
         
       } else {
         console.log("el login no es correcto");
