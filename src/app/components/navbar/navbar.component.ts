@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/user.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
   resultado = "";
   hidden = true;
 
-  constructor(private userService : UsersService) {
+  constructor(private userService : UsersService,private router : Router) {
     this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null && userService.isLogged === true) {
       this.hidden = false;
@@ -49,7 +50,13 @@ export class NavbarComponent implements OnInit {
     if(document.getElementsByClassName("navbar__login")[0].textContent === "Salir"){
       sessionStorage.clear();
       this.userService.isLogged = false;
-      //location.reload();
+      this.router.navigateByUrl("/login").then(e => {
+        if (e) {
+          console.log("Navigation is successful!");
+        } else {
+          console.log("Navigation has failed!");
+        }
+      });
     }
   }
 
