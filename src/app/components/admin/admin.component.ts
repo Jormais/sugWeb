@@ -31,4 +31,14 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  aceptar(){
+
+  }
+
+  eliminar(user : any){
+    console.log("Se ha pulsado eliminar" + user.name);
+    this.userService.deleteUser(user.employee_number);
+    location.reload();
+  }
+
 }
