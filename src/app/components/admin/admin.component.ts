@@ -18,6 +18,16 @@ export class AdminComponent implements OnInit {
     terms_conditions : true,
     rol : false
   }];
+  user : User = {
+    name : "",
+    subname : "",
+    employee_number : "",
+    job_category : "",
+    email : "",
+    password : "",
+    terms_conditions : true,
+    rol : false
+  };
 
   constructor(private userService : UsersService) {
     userService.getAllUsers().then( users => {
@@ -31,12 +41,15 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  aceptar(){
-
+  aceptar(user : any){
+    this.user = user;
+    console.log("Se ha pulsado aceptar " + user.name);
+    this.userService.postUserAccepted(user)
+    .then(user => console.log(user));
   }
 
   eliminar(user : any){
-    console.log("Se ha pulsado eliminar" + user.name);
+    console.log("Se ha pulsado eliminar " + user.name);
     this.userService.deleteUser(user.employee_number);
     location.reload();
   }
