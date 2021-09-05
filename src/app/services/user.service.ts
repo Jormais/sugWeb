@@ -38,4 +38,9 @@ export class UsersService {
       return "OK";
     })
   }
+
+  postUserAccepted(user : User){
+    return axios.post("http://localhost:3000/usersAcepted", user)
+    .then(res => res.data);
+  }
 }
