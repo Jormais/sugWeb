@@ -44,7 +44,7 @@ export class AdminComponent implements OnInit {
   aceptar(user : any){
     this.user = user;
     console.log("Se ha pulsado aceptar " + user.name);
-    this.userService.postUserAccepted(user)
+    this.userService.postUserAcepted(user)
     .then(user => console.log(user));
     this.userService.deleteUser(user.employee_number);
     location.reload();
