@@ -25,26 +25,28 @@ export class LogInComponent implements OnInit {
   constructor(private userService : UsersService) { 
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
+
       this.userService.isLogged = true;
     }
     console.log(window.sessionStorage.getItem("loginEmail"));
     console.log(window.sessionStorage.getItem("loginPassword"));
     console.log(this.userService.isLogged);
     
+    
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   async login() {
     if (this.user.email === "") {
       console.log("carga la db");
       
-      const res = await this.userService.getOneUser(this.email);
+      const res = await this.userService.getUserAcepted(this.email);
 
-      this.user = res[0];
+      this.user = res;
       
-      console.log(this.user);
+      console.log(res);
       if (this.email === this.user.email && this.password === this.user.password) {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);

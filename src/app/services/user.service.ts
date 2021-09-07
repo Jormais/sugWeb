@@ -22,10 +22,7 @@ export class UsersService {
 
   getOneUser(email : string) {
     return axios.get(`http://localhost:3000/users/${email}`)
-    .then( user => {
-      //console.log(user.data);
-      return user.data;
-    });
+    .then( user => user.data[0]);
   }
 
   postUser(user : User) {
@@ -39,8 +36,13 @@ export class UsersService {
     })
   }
 
-  postUserAccepted(user : User){
+  postUserAcepted(user : User){
     return axios.post("http://localhost:3000/usersAcepted", user)
     .then(res => res.data);
+  }
+
+  getUserAcepted(email : string) {
+    return axios.get(`http://localhost:3000/usersAcepted/${email}`)
+    .then(res => res.data[0]);
   }
 }
