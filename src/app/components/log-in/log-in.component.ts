@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/user.service';
 import { User } from 'src/app/utils/models.utils';
 
@@ -22,7 +23,7 @@ export class LogInComponent implements OnInit {
     rol : false
   };
 
-  constructor(private userService : UsersService) { 
+  constructor(private userService : UsersService,private router : Router) { 
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
 
@@ -39,7 +40,7 @@ export class LogInComponent implements OnInit {
   }
 
   async login() {
-    if (this.user.email === "") {
+    if (this.user.email === "" ) {
       console.log("carga la db");
       
       const res = await this.userService.getUserAcepted(this.email);
