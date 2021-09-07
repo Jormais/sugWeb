@@ -41,7 +41,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  aceptar(user : any){
+  aceptar(user : User){
     this.user = user;
     console.log("Se ha pulsado aceptar " + user.name);
     this.userService.postUserAcepted(user)
@@ -50,7 +50,7 @@ export class AdminComponent implements OnInit {
     location.reload();
   }
 
-  eliminar(user : any){
+  eliminar(user : User){
     console.log("Se ha pulsado eliminar " + user.name);
     this.userService.deleteUser(user.employee_number);
     location.reload();
