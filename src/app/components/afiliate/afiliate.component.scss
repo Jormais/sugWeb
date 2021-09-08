@@ -1,21 +1,41 @@
+.card{
+    display: flex;
+    background-color: rgb(238, 234, 16);
+    text-align: center;
+    padding: 20px;
+    border: 2px solid rgb(147, 147, 240);
+    border-radius: 10px;
+    color: blanchedalmond;
+    margin: 5%;
+    align-items: center;
+    h1{
+        color: rgb(139, 9, 9);
+    }
+}
+
 .container{
     text-align: center;
     padding: 20px;
-    width: 80%;
     background-color: black;
-    border: 1px solid blanchedalmond;
+    border: 2px solid gray;
     border-radius: 10px;
     color: blanchedalmond;
-    margin-top: 10px;
+    margin: 3px;
+    a{
+        text-decoration: none;
+        color: blanchedalmond;
+    }
 }
 
 .container_general{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 10px;
+    min-width: 500px;
+    a{
+        text-decoration: none;
+        color: blanchedalmond;
+    }
 }
 
 .container_interno{
@@ -26,8 +46,11 @@
         margin: 10px;
         padding: 20px;
         background-color: yellow;
-        color: black;
         border-radius: 20px;
+    }
+    a{
+        text-decoration: none;
+        color: black;
     }
 }
 
@@ -38,21 +61,32 @@
     padding: 10px;
     &_item{
         background-color: black;
-        border: 1px solid whitesmoke;
-        color: blanchedalmond;
+        border: 2px solid gray;
         border-radius: 10px;
-        margin: 5px;
+        margin: 3px;
         text-align: center;
-        padding: 3px;
+        padding: 5px;
+    }
+    a{
+        text-decoration: none;
+        color: blanchedalmond;
     }
 }
 
 .container_aside{
     background-color: black;
     color: blanchedalmond;
-    border: 1px solid blanchedalmond;
+    border: 2px solid gray;
     border-radius: 5px;
     width: 50%;
     text-align: center;
     padding: 20px;
+    margin: 3px;
+    a{
+        text-decoration: none;
+        color: blanchedalmond;
+    }
+    img{
+        padding-bottom: 3px;
+    }
 }
