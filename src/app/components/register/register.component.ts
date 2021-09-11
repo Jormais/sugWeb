@@ -10,6 +10,8 @@ import { User } from 'src/app/utils/models.utils';
 })
 export class RegisterComponent implements OnInit {
 
+  road_has_been_selected : boolean = false;
+
   constructor(private userService : UsersService,  private router : Router) { }
 
   ngOnInit(): void {
@@ -45,4 +47,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  isDriver(){
+    console.log("ES CONDUCTO " + this.user.job_category);
+    if(this.user.job_category === "Carretera"){
+      this.road_has_been_selected = true;
+    } else {
+      this.road_has_been_selected = false;
+    }
+  }
 }
