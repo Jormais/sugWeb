@@ -6,5 +6,6 @@ export interface User {
     email : string,
     password : string,
     terms_conditions : boolean,
-    rol : boolean
+    rol : boolean,
+    driver_number : string
 }

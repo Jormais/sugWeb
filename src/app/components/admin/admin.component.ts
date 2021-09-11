@@ -16,7 +16,8 @@ export class AdminComponent implements OnInit {
     email : "",
     password : "",
     terms_conditions : true,
-    rol : false
+    rol : false,
+    driver_number : ""
   }];
   user : User = {
     name : "",
@@ -26,7 +27,8 @@ export class AdminComponent implements OnInit {
     email : "",
     password : "",
     terms_conditions : true,
-    rol : false
+    rol : false,
+    driver_number : ""
   };
 
   constructor(private userService : UsersService) {

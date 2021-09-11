@@ -23,7 +23,8 @@ export class RegisterComponent implements OnInit {
     email : "",
     password : "",
     terms_conditions : true,
-    rol : false
+    rol : false,
+    driver_number : ""
   }
 
   postUser() {
