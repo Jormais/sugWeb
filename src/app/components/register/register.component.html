@@ -16,12 +16,15 @@
         <input type="text" class="form-control" [(ngModel)]="user.employee_number" name="employee_number" id="inputEmployee_number">
         <div id="inputEmployee_numberHelp" class="form-text">* Obligatorio para registrarse</div>
     </div>
-    <div class="mb-3 container__input">
-        <label for="inputCategory" class="form-label">Departamento</label>
-        <input type="text" class="form-control" [(ngModel)]="user.job_category" name="job_category" id="inputCategory">
-        <div id="inputCategoryHelp" class="form-text">* Obligatorio para registrarse</div>
+    <div class="input-group mb-3 container__input">
+        <label class="input-group-text"for="inputCategory" >Departamento</label>
+        <select class="form-select" [(ngModel)]="user.job_category" name="job_category" id="inputCategory" (change)="isDriver()">
+            <option value="Carretera">Carretera</option>
+            <option value="Administración">Administración</option>
+            <option value="Taller">Taller</option>
+        </select>
     </div>
-    <div class="mb-3 container__input">
+    <div class="mb-3 container__input" *ngIf="road_has_been_selected === true">
         <label for="inputDriver_number" class="form-label">Número de conductor</label>
         <input type="text" class="form-control" [(ngModel)]="user.driver_number" name="driver_number" id="inputDriver_number">
         <div id="inputDriver_numberHelp" class="form-text">*En caso de pertenecer a otro departamento dejar vacío</div>
