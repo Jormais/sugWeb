@@ -20,7 +20,8 @@ export class LogInComponent implements OnInit {
     email : "",
     password : "",
     terms_conditions : true,
-    rol : false
+    rol : false,
+    driver_number : ""
   };
 
   constructor(private userService : UsersService,private router : Router) { 
@@ -62,7 +63,8 @@ export class LogInComponent implements OnInit {
           email : "",
           password : "",
           terms_conditions : true,
-          rol : false
+          rol : false,
+          driver_number : ""
         };
         
       } else {
@@ -85,7 +87,8 @@ export class LogInComponent implements OnInit {
           email : "",
           password : "",
           terms_conditions : true,
-          rol : false
+          rol : false,
+          driver_number : ""
         };
       } else {
         console.log("el login no es correcto");
