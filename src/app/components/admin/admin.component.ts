@@ -15,8 +15,8 @@ export class AdminComponent implements OnInit {
     job_category : "",
     email : "",
     password : "",
-    terms_conditions : true,
-    rol : false,
+    terms_conditions : 1,
+    rol : 0,
     driver_number : ""
   }];
   user : User = {
@@ -26,8 +26,8 @@ export class AdminComponent implements OnInit {
     job_category : "",
     email : "",
     password : "",
-    terms_conditions : true,
-    rol : false,
+    terms_conditions : 1,
+    rol : 0,
     driver_number : ""
   };
 

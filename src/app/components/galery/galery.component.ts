@@ -13,7 +13,13 @@ export class GaleryComponent implements OnInit {
   constructor(private userService : UsersService) { }
 
   ngOnInit(): void {
-    this.isLoged = this.userService.isLogged;
+    
+    if (window.sessionStorage.getItem("isLogged") === "true"){
+      this.isLoged = true;
+    } else if(window.sessionStorage.getItem("isLogged") === "false"){
+      this.isLoged = false;
+    }
+
   }
 
 }

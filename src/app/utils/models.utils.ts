@@ -5,7 +5,7 @@ export interface User {
     job_category : string,
     email : string,
     password : string,
-    terms_conditions : boolean,
-    rol : boolean,
+    terms_conditions : number,
+    rol : number,
     driver_number : string
 }
