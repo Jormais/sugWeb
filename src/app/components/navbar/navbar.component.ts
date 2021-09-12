@@ -20,13 +20,18 @@ export class NavbarComponent implements OnInit {
   segundos : number = this.fecha.getSeconds();
   resultado = "";
   hidden = true;
+  isAdminHidden = true;
 
   constructor(private userService : UsersService,private router : Router) {
     this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
-    if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null && userService.isLogged === true) {
-      this.hidden = false;
 
+    if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null &&  window.sessionStorage.getItem("isLogged") === "true") {
+      this.hidden = false;
     }
+    if(window.sessionStorage.getItem("isAdmin") === "true") {
+      this.isAdminHidden = false;
+    }
+    
   }
 
   ngOnInit(): void {
@@ -41,20 +46,21 @@ export class NavbarComponent implements OnInit {
       this.segundos = this.fecha.getSeconds();
       this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
     }, 1000)
-    if (this.userService.isLogged == true) {
-      document.getElementsByClassName("navbar__login")[0].textContent = "Salir"
+    if (window.sessionStorage.getItem("isLogged") === "true") {
+      document.getElementsByClassName("navbar__login")[0].textContent = "Salir";
     }
   } 
 
   logOut() {
     if(document.getElementsByClassName("navbar__login")[0].textContent === "Salir"){
       sessionStorage.clear();
-      this.userService.isLogged = false;
+      window.sessionStorage.setItem("isLogged", "false");
       this.router.navigateByUrl("/").then(e => {
         if (e) {
           console.log("Navigation is successful!");
         } else {
           console.log("Navigation has failed!");
+          location.reload();
         }
       });
     }
