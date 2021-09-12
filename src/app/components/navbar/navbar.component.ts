@@ -50,7 +50,7 @@ export class NavbarComponent implements OnInit {
     if(document.getElementsByClassName("navbar__login")[0].textContent === "Salir"){
       sessionStorage.clear();
       this.userService.isLogged = false;
-      this.router.navigateByUrl("/login").then(e => {
+      this.router.navigateByUrl("/").then(e => {
         if (e) {
           console.log("Navigation is successful!");
         } else {
