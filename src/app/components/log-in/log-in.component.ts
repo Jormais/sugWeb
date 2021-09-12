@@ -19,20 +19,20 @@ export class LogInComponent implements OnInit {
     job_category : "",
     email : "",
     password : "",
-    terms_conditions : true,
-    rol : false,
+    terms_conditions : 1,
+    rol : 0,
     driver_number : ""
   };
 
-  constructor(private userService : UsersService,private router : Router) { 
+  constructor(private userService : UsersService,private router : Router) {
+    window.sessionStorage.setItem("isLogged", "false");
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
 
-      this.userService.isLogged = true;
+        window.sessionStorage.setItem("isLogged", "true");
     }
     console.log(window.sessionStorage.getItem("loginEmail"));
     console.log(window.sessionStorage.getItem("loginPassword"));
-    console.log(this.userService.isLogged);
     
     
   }
@@ -48,12 +48,15 @@ export class LogInComponent implements OnInit {
 
       this.user = res;
       
-      console.log(res);
+      console.log(this.user.rol);
       if (this.email === this.user.email && this.password === this.user.password) {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);
         window.sessionStorage.setItem("loginPassword", this.user.password);
-        this.userService.isLogged = true;
+        window.sessionStorage.setItem("isLogged", "true");
+        if(this.user.rol === 1){
+        this.userService.isRoot = true;
+        }
         location.reload();
         this.user = {
           name : "",
@@ -62,8 +65,8 @@ export class LogInComponent implements OnInit {
           job_category : "",
           email : "",
           password : "",
-          terms_conditions : true,
-          rol : false,
+          terms_conditions : 1,
+          rol : 0,
           driver_number : ""
         };
         
@@ -77,7 +80,10 @@ export class LogInComponent implements OnInit {
         console.log("El login es correcto");
         window.sessionStorage.setItem("loginEmail", this.user.email);
         window.sessionStorage.setItem("loginPassword", this.user.password);
-        this.userService.isLogged = true;
+        window.sessionStorage.setItem("isLogged", "true");
+        if(this.user.rol === 1){
+          this.userService.isRoot = true;
+          }
         location.reload();
         this.user = {
           name : "",
@@ -86,8 +92,8 @@ export class LogInComponent implements OnInit {
           job_category : "",
           email : "",
           password : "",
-          terms_conditions : true,
-          rol : false,
+          terms_conditions : 1,
+          rol : 0,
           driver_number : ""
         };
       } else {

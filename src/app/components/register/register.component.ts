@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
     job_category : "",
     email : "",
     password : "",
-    terms_conditions : true,
-    rol : false,
+    terms_conditions : 1,
+    rol : 0,
     driver_number : ""
   }
 
@@ -36,8 +36,8 @@ export class RegisterComponent implements OnInit {
 
   register(){
     this.postUser();
-    window.sessionStorage.setItem("loginEmail", this.user.email);
-    window.sessionStorage.setItem("loginPassword", this.user.password);
+    // window.sessionStorage.setItem("loginEmail", this.user.email);
+    // window.sessionStorage.setItem("loginPassword", this.user.password);
     this.router.navigateByUrl("/login").then(e => {
       if (e) {
         console.log("Navigation is successful!");

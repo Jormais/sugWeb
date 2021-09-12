@@ -8,7 +8,7 @@ import { User } from '../utils/models.utils';
 })
 export class UsersService {
 
-  isLogged : boolean = false;
+  isRoot : boolean = false;
 
   constructor() {
   }
