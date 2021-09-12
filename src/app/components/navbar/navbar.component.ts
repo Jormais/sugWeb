@@ -20,17 +20,16 @@ export class NavbarComponent implements OnInit {
   segundos : number = this.fecha.getSeconds();
   resultado = "";
   hidden = true;
-  isAdmin = true;
+  isAdminHidden = true;
 
   constructor(private userService : UsersService,private router : Router) {
     this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
-    console.log();
-    
+
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null &&  window.sessionStorage.getItem("isLogged") === "true") {
       this.hidden = false;
     }
-    if(this.userService.isRoot === true) {
-      this.isAdmin = false;
+    if(window.sessionStorage.getItem("isAdmin") === "true") {
+      this.isAdminHidden = false;
     }
     
   }
@@ -48,7 +47,7 @@ export class NavbarComponent implements OnInit {
       this.resultado = `${this.diasSemana[this.diaDeLaSemana]} ${this.diaDelMes} del ${this.mes + 1} de ${this.año} - ${this.horas} : ${this.minutos} : ${this.segundos}`;
     }, 1000)
     if (window.sessionStorage.getItem("isLogged") === "true") {
-      document.getElementsByClassName("navbar__login")[0].textContent = "Salir"
+      document.getElementsByClassName("navbar__login")[0].textContent = "Salir";
     }
   } 
 

@@ -25,7 +25,6 @@ export class LogInComponent implements OnInit {
   };
 
   constructor(private userService : UsersService,private router : Router) {
-    window.sessionStorage.setItem("isLogged", "false");
     if (window.sessionStorage.getItem("loginEmail") != null && window.sessionStorage.getItem("loginPassword") != null) {
       console.log("YA ESTA LOGEADO");
 
@@ -55,7 +54,7 @@ export class LogInComponent implements OnInit {
         window.sessionStorage.setItem("loginPassword", this.user.password);
         window.sessionStorage.setItem("isLogged", "true");
         if(this.user.rol === 1){
-        this.userService.isRoot = true;
+          window.sessionStorage.setItem("isAdmin", "true");
         }
         location.reload();
         this.user = {
@@ -82,8 +81,8 @@ export class LogInComponent implements OnInit {
         window.sessionStorage.setItem("loginPassword", this.user.password);
         window.sessionStorage.setItem("isLogged", "true");
         if(this.user.rol === 1){
-          this.userService.isRoot = true;
-          }
+          window.sessionStorage.setItem("isAdmin", "true");
+        }
         location.reload();
         this.user = {
           name : "",
