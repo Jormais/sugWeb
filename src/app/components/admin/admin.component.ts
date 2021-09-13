@@ -57,5 +57,4 @@ export class AdminComponent implements OnInit {
     this.userService.deleteUser(user.employee_number);
     location.reload();
   }
-
 }
