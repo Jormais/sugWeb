@@ -9,3 +9,8 @@ export interface User {
     rol : number,
     driver_number : string
 }
+
+export interface Mail{
+    subject : string,
+    text : string
+}

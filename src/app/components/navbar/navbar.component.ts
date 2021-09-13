@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/services/user.service';
+import { UsersService } from 'src/app/services/users/user.service';
 
 @Component({
   selector: 'app-navbar',
