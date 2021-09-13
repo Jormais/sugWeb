@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/services/user.service';
+import { UsersService } from 'src/app/services/users/user.service';
 
 @Component({
   selector: 'app-galery',

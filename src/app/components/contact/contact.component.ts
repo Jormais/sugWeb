@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from 'src/app/services/email/email.service';
+import { Mail } from 'src/app/utils/models.utils';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  email : Mail = {
+    subject : "",
+    text : ""
+  }
+
+  constructor(private emailService : EmailService) { }
 
   ngOnInit(): void {
+  }
+
+  sendEmail(){
+    this.emailService.sendMail(this.email);
+    this.email = {
+      subject : "",
+      text : ""
+    }
+    alert("Se ha enviado el mensaje.")
   }
 
 }
