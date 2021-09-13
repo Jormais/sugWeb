@@ -40,9 +40,12 @@ export class LogInComponent implements OnInit {
   }
 
   async login() {
+    if(this.email === ""){
+      alert("el usuario o contraseña no son correctos, inténtelo de nuevo");
+    }
 
     const res = await this.userService.getUserAcepted(this.email);
-
+    console.log(res);
     if (this.user.email === "" ) {
       console.log("carga la db");
       
