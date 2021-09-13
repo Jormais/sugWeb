@@ -43,4 +43,10 @@ export class UsersService {
     return axios.get(`http://localhost:3000/usersAcepted/${email}`)
     .then(res => res.data[0]);
   }
+
+  // sendMail(){
+  //   return axios.post("http://localhost:3000/email")
+  //   .then(res => console.log(res.data)
+  //   );
+  // }
 }

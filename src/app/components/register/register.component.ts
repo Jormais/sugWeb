@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/user.service';
 import { User } from 'src/app/utils/models.utils';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-register',
@@ -11,8 +12,16 @@ import { User } from 'src/app/utils/models.utils';
 export class RegisterComponent implements OnInit {
 
   road_has_been_selected : boolean = false;
+  palabraSecreta = "palabra"
+  clave = "clave"
+  toDecript = "";
 
-  constructor(private userService : UsersService,  private router : Router) { }
+  constructor(private userService : UsersService,  private router : Router) {
+    // this.toDecript = this.encrypt(this.clave);
+    // console.log(this.encrypt(this.clave));
+    // console.log(this.decrypt(this.toDecript));
+    // //userService.sendMail();
+  }
 
   ngOnInit(): void {
   }
@@ -55,4 +64,13 @@ export class RegisterComponent implements OnInit {
       this.road_has_been_selected = false;
     }
   }
+
+  encrypt(value : string) : string{
+    return CryptoJS.AES.encrypt(value, this.palabraSecreta.trim()).toString();
+  }
+
+  decrypt(textToDecrypt : string){
+    return CryptoJS.AES.decrypt(textToDecrypt, this.palabraSecreta.trim()).toString(CryptoJS.enc.Utf8);
+  }
+
 }
