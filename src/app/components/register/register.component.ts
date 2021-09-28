@@ -55,17 +55,18 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    this.postUser();
-    // window.sessionStorage.setItem("loginEmail", this.user.email);
-    // window.sessionStorage.setItem("loginPassword", this.user.password);
-    this.sendEmail(this.mail);
-    this.router.navigateByUrl("/login").then(e => {
-      if (e) {
-        console.log("Navigation is successful!");
-      } else {
-        console.log("Navigation has failed!");
-      }
-    });
+    // this.postUser();
+    // // window.sessionStorage.setItem("loginEmail", this.user.email);
+    // // window.sessionStorage.setItem("loginPassword", this.user.password);
+    // this.sendEmail(this.mail);
+    // this.router.navigateByUrl("/login").then(e => {
+    //   if (e) {
+    //     console.log("Navigation is successful!");
+    //   } else {
+    //     console.log("Navigation has failed!");
+    //   }
+    // });
+    alert("Estamos trabajando en solucionar cuestiones técnicas, en breves momentos podrán registrarse.");
   }
 
   isDriver(){
