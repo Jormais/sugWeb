@@ -11,6 +11,7 @@
     background-color:dimgray;
     border: blanchedalmond solid 1px;
     border-radius: 5px;
+    min-width: 200px;
     color: rgb(139, 9, 9);
     padding: 15px;
     margin: 5px;
@@ -40,4 +41,97 @@
     color: rgb(223, 134, 25);
     padding: 10px;
     margin: 5px;
+}
+
+@media screen and (max-width: 1300px){
+
+    .box-main{
+        max-width: 700px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+
+    .box-main{
+        max-width: 600px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+
+    .box-aside{
+        width: 90px;
+    }
+
+    .box-main{
+        max-width: 400px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+}
+
+@media screen and (max-width: 980px){
+    .container{
+        grid-template-columns: 100%;
+    }
+    .box-aside{
+        min-width: 90px;
+        width: 400px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .box-main{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .container{
+        grid-template-columns: 100%;
+        align-self: center;
+        justify-self: center;
+    }
+    .box-aside{
+        min-width: 90px;
+        width: 300px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .box-main{
+        width: 300px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+}
+
+@media screen and (max-width: 375px){
+    .container{
+        grid-template-columns: 100%;
+        align-self: center;
+        justify-self: center;
+    }
+    .box-aside{
+        min-width: 90px;
+        width: 200px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .box-main{
+        width: 200px;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
 }
