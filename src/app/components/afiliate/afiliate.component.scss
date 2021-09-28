@@ -90,3 +90,24 @@
         padding-bottom: 3px;
     }
 }
+
+@media screen and (max-width: 420px){
+    .card{
+        display: flex;
+        align-self: center;
+        justify-content: center;
+    }
+    .container_general{
+        display: flex;
+        flex-direction: column;
+    }
+    .container_interno{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 375px){
+
+}
