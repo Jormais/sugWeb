@@ -7,7 +7,7 @@
         </div>
         <a class="banner__time">{{resultado}}</a>
     </div>
-    <div class="navbar">
+    <!-- <div class="navbar">
         <nav>
             <a class="navbar__item" routerLink="">Inicio</a>
             <a class="navbar__item" routerLink="/about">Nosotros</a>
@@ -24,5 +24,41 @@
                 Iniciar/Registrarse
             </a>
         </nav>
-    </div>
+    </div> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand navbar__item" routerLink="">SUG</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link navbar__item" routerLink="/about">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" routerLink="/galery">Galeria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" routerLink="/afiliate" [hidden]="hidden">Afiliados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" routerLink="/contact">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" routerLink="/discount" [hidden]="hidden">Descuentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" routerLink="/admin" [hidden]="isAdminHidden">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/register" class="nav-link navbar__login" (click)="logOut()">
+                  <img class="navbar__img" src="\assets\img\usuario.svg" width="20" height="20" alt="">
+                  Iniciar/Registrarse
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 </header>
